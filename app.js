@@ -33,6 +33,25 @@ const container = new Vue({
             titolo: "Paradise",
             testo: "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
         }],
+
+        // Indice corrente immagine
+        imgCurrent: 0,
+    },
+
+    methods: {
+        // Funzione arrowUp
+        arrowUp: function(){
+            if (this.imgCurrent > 0 ){
+                this.imgCurrent --;
+            }
+        },
+
+        // Funzione arrowDown
+        arrowDown: function(){
+            if (this.imgCurrent < 4){
+                this.imgCurrent ++;
+            }
+        },
     }
 })
 console.log(container);
