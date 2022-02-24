@@ -66,6 +66,7 @@ const container = new Vue({
             this.intervallo = setInterval(this.arrowDown, 1680);
         },
 
+        // Stop Autoplay
         stopPlay: function(){
             clearInterval(this.intervallo);
         }
