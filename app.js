@@ -38,6 +38,10 @@ const container = new Vue({
         imgCurrent: 0,
     },
 
+    created: function(){
+        this.autoPlay();
+    },
+
     methods: {
         // Funzione arrowUp
         arrowUp: function(){
@@ -56,6 +60,15 @@ const container = new Vue({
                 this.imgCurrent = 0;
             }
         },
+
+        // Autoplay
+        autoPlay: function(){
+            this.intervallo = setInterval(this.arrowDown, 1680);
+        },
+
+        stopPlay: function(){
+            clearInterval(this.intervallo);
+        }
     }
 })
 console.log(container);
