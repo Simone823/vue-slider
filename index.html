@@ -36,8 +36,7 @@
 
                 <!-- Wrapper slider -->
                 <div class="slider_wrapper">
-
-                    <div class="item" v-for="item in arrayItems">
+                    <div class="item" v-for="(item, index) in arrayItems" :class="index == imgCurrent ? 'active' : '' ">
                         <img :src="item.immagine"/>                                                     
                         <div class="description">
                             <h1 class="title-item">{{item.titolo}}</h1>
@@ -55,18 +54,18 @@
                 <!-- Wrapper controlli immagini -->
                 <div class="controls_wrapper">
 
-                    <div class="control_item" v-for="item in arrayItems">
+                    <div class="control_item" v-for="(item, index) in arrayItems" :class="index == imgCurrent ? 'active-control' : '' " >
                         <img :src="item.immagine"/>                                                     
                     </div>
 
                     <!-- Controlli, frecce per cambiare immagine -->
                     <div class="controls">
 
-                        <div class="arrow-up">
+                        <div @click="arrowUp" class="arrow-up">
                             <i class="fas fa-angle-up"></i>
                         </div>
 
-                        <div class="arrow-down">
+                        <div @click="arrowDown" class="arrow-down">
                             <i class="fas fa-angle-down"></i>
                         </div>
                     </div>
