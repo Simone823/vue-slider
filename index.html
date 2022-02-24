@@ -35,7 +35,7 @@
             <div class="col-10">
 
                 <!-- Wrapper slider -->
-                <div class="slider_wrapper">
+                <div class="slider_wrapper" @mouseLeave="autoPlay" @mouseEnter="stopPlay">
                     <div class="item" v-for="(item, index) in arrayItems" :class="index == imgCurrent ? 'active' : '' ">
                         <img :src="item.immagine"/>                                                     
                         <div class="description">
@@ -61,11 +61,11 @@
                     <!-- Controlli, frecce per cambiare immagine -->
                     <div class="controls">
 
-                        <div @click="arrowUp" class="arrow-up">
+                        <div @mouseLeave="autoPlay" @mouseEnter="stopPlay" @click="arrowUp" class="arrow-up">
                             <i class="fas fa-angle-up"></i>
                         </div>
 
-                        <div @click="arrowDown" class="arrow-down">
+                        <div @mouseLeave="autoPlay" @mouseEnter="stopPlay" @click="arrowDown" class="arrow-down">
                             <i class="fas fa-angle-down"></i>
                         </div>
                     </div>
