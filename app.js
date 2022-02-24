@@ -43,6 +43,8 @@ const container = new Vue({
         arrowUp: function(){
             if (this.imgCurrent > 0 ){
                 this.imgCurrent --;
+            } else if (this.imgCurrent == 0){
+                this.imgCurrent = 4;
             }
         },
 
@@ -50,6 +52,8 @@ const container = new Vue({
         arrowDown: function(){
             if (this.imgCurrent < 4){
                 this.imgCurrent ++;
+            } else if (this.imgCurrent == 4){
+                this.imgCurrent = 0;
             }
         },
     }
