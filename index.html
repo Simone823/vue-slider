@@ -37,6 +37,14 @@
                 <!-- Wrapper slider -->
                 <div class="slider_wrapper">
 
+                    <div class="item" v-for="item in arrayItems">
+                        <img :src="item.immagine"/>                                                     
+                        <div class="description">
+                            <h1 class="title-item">{{item.titolo}}</h1>
+                            <p class="testo">{{item.testo}}</p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -47,6 +55,9 @@
                 <!-- Wrapper controlli immagini -->
                 <div class="controls_wrapper">
 
+                    <div class="control_item" v-for="item in arrayItems">
+                        <img :src="item.immagine"/>                                                     
+                    </div>
 
                     <!-- Controlli, frecce per cambiare immagine -->
                     <div class="controls">
