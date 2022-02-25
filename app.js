@@ -61,6 +61,10 @@ const container = new Vue({
             }
         },
 
+        goToItem: function(i){
+            this.imgCurrent = i;
+        },
+
         // Autoplay
         autoPlay: function(){
             this.intervallo = setInterval(this.arrowDown, 1680);
