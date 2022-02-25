@@ -55,7 +55,7 @@
                 <div class="controls_wrapper">
 
                     <div class="control_item" v-for="(item, index) in arrayItems" :class="index == imgCurrent ? 'active-control' : '' " >
-                        <img :src="item.immagine"/>                                                     
+                        <img @mouseLeave="autoPlay" @mouseEnter="stopPlay" @click="goToItem(index)" :src="item.immagine"/>                                                     
                     </div>
 
                     <!-- Controlli, frecce per cambiare immagine -->
